@@ -1,0 +1,3 @@
+function Update()
+EndWave()
+end

@@ -1312,7 +1312,10 @@ local function RegisterCutscenes()
 			end
 
 		else
-			local wingdings = self:GetVar("wingdings")
+				local wingdings = self:GetVar("wingdings")
+
+				if not wingdings then wingdings = self:SetVar("wingdings",{}) end
+
 				if self.ElapsedDelta < 1/12 then
 					wingdings = self:SetVar("wingdings",{})
 					flickersprite.alpha = 0
@@ -1325,6 +1328,7 @@ local function RegisterCutscenes()
 						PapsRig:SetVisible(true)
 					end
 				end
+
 				for i,v in pairs(wingdings) do
 					if v.isactive then
 						v.xscale = v.xscale + 0.2*Time.mult
@@ -2156,7 +2160,7 @@ function EncounterStarting()
 	papy.y = PapsRig.Legs.y
 	papy.alpha = 0
 	
-	
+
 	if GetAlMightyGlobal("papyrusdisbeliefex_checkpoint") == 1 then
 		Audio.LoadFile("p5_loop")
 		phase = 5

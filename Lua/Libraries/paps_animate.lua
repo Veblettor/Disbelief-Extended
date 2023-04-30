@@ -259,7 +259,7 @@ elseif self.Animation == "Phase 8 Tired" then
  elseif self.Animation == "      " then
    self:SetAlpha(0)
    self.Torso.alpha = 1
-   self.Torso.SetAnimation({"Papyrus/Body/      _"})
+   self.Torso.SetAnimation({"Papyrus/Body/WindowsIsAShittyOS"})
    self.Torso.Scale(0.25,0.25)
    self.Torso.y = -100
 end

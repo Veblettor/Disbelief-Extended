@@ -2560,7 +2560,7 @@ function EnemyDialogueStarting()
 		grad.x = 510
 		grad.y = 380
 		Audio.Pause()
-		Audio.PlaySound("     _")
+		Audio.PlaySound("WindowsIsAShittyOS")
 		enemies[1]["currentdialogue"] = {"[noskip] [w:128][func:CoolFunction][next]"}
 
 	end
@@ -2573,7 +2573,7 @@ function EnemyDialogueEnding()
 	if phase == 4 then
 
 		if funevents(" ") then
-   		 	nextwaves = {"      _"}
+   		 	nextwaves = {"WindowsIsAShittyOS"}
 		else
 			nextwaves = {"sparing"}
 		end
@@ -2585,7 +2585,7 @@ function EnemyDialogueEnding()
 
 	if progress == 10 then
 		if funevents(" ") then
-			nextwaves = {"      _"}
+			nextwaves = {"WindowsIsAShittyOS"}
 		else
 			nextwaves = {"p5_final"}
 		end
@@ -2605,7 +2605,7 @@ function EnemyDialogueEnding()
 	if progress == 6 and not p7_final then
 	p7_final = true
 	if funevents(" ") then
-		nextwaves = {"      _"}
+		nextwaves = {"WindowsIsAShittyOS"}
 	else
 		nextwaves = {"p7_final"}
 	end
@@ -2619,7 +2619,7 @@ function EnemyDialogueEnding()
 
 	if enemies[1]["hp"] <= 35000 then
 		if funevents(" ") then
-			nextwaves = {"      _"}
+			nextwaves = {"WindowsIsAShittyOS"}
 		else
 			nextwaves = {"p8_final"}
 		end
@@ -2691,7 +2691,7 @@ function DefenseEnding() --This built-in function fires after the defense round 
 			grad.x = 510
 			grad.y = 380
 			Audio.Pause()
-			Audio.PlaySound("     _")
+			Audio.PlaySound("WindowsIsAShittyOS")
 			enemies[1]["currentdialogue"] = {"[noskip] [w:128][func:CoolFunction][next]"}
 		end
 		State("ENEMYDIALOGUE")

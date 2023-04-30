@@ -46,7 +46,8 @@
         "nextwaves",
         "SetAlMightyGlobal",
         "deathtext",
-        "BattleDialog"
+        "BattleDialog",
+        "Wave"
     ],
     "Lua.diagnostics.disable": [
         "undefined-field"

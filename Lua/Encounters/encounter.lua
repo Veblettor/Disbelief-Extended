@@ -1893,6 +1893,14 @@ local function RegisterCutscenes()
 
 	local function p8introstart(self)
 		PapsRig:SetLayer("BelowBullet")
+
+		local fullybody = self:SetVar("papy",CreateSprite("Papyrus/Royal Guard Silo","Top")) 
+		fullybody.SetPivot(0.5,0)
+		fullybody.SetParent(PapsRig.Legs)
+		fullybody.y = 0
+		fullybody.x = 0
+		fullybody.alpha = 0
+		fullybody.SetAnchor(0.5,0)
 	end
 
 	local function p8introupdate(self)
@@ -1937,6 +1945,11 @@ local function RegisterCutscenes()
 				Player.sprite.alpha = 0
 			end
 		elseif self.Phase == 3 then
+			local fullybody = self:GetVar("papy")
+
+			if fullybody and fullybody.isactive then
+				fullybody.alpha = fullybody.alpha - Time.mult/15
+			end
 
 			if not self:GetVar("beginf") then
 				self:SetVar("beginf",true)
@@ -1967,16 +1980,29 @@ local function RegisterCutscenes()
 			if self.ElapsedDelta >= 17.66667 and not self:GetVar("dingf") then
 				self:SetVar("dingf",true)
 				Audio.PlaySound("ding")
+
+				if fullybody and fullybody.isactive then
+					fullybody.alpha = 1
+				end
+
 			end
 
 			if self.ElapsedDelta >= 18 and not self:GetVar("dingf1") then
 				self:SetVar("dingf1",true)
 				Audio.PlaySound("ding")
+
+				if fullybody and fullybody.isactive then
+					fullybody.alpha = 1
+				end
 			end
 
 			if self.ElapsedDelta >= 18.33333 and not self:GetVar("dingf2") then
 				self:SetVar("dingf2",true)
 				Audio.PlaySound("ding")
+
+				if fullybody and fullybody.isactive then
+					fullybody.alpha = 1
+				end
 			end
 
 			if self.ElapsedDelta >= 18.83333 and not self:GetVar("endf") then
@@ -2014,11 +2040,15 @@ local function RegisterCutscenes()
 		end
 	end
 
-	local function p8introstop()
+	local function p8introstop(self)
 		flickersprite.alpha = 0
 		flickersprite.color = {0,0,0}
 		phase = 8
 		PapsRig:SetLayer("BelowArena")
+
+		if self:GetVar("papy") and self:GetVar("papy").isactive then
+			self:GetVar("papy").Remove()
+		end
 	end
 
 	local function p8endupdate(self)
@@ -2126,7 +2156,7 @@ function EncounterStarting()
 	papy.y = PapsRig.Legs.y
 	papy.alpha = 0
 	
-	
+	SetAlMightyGlobal("papyrusdisbeliefex_checkpoint",3)
 	if GetAlMightyGlobal("papyrusdisbeliefex_checkpoint") == 1 then
 		Audio.LoadFile("p5_loop")
 		phase = 5
@@ -2194,7 +2224,7 @@ function EncounterStarting()
 		PapsRig:SendToBottom()
 		Bleed()
 		phase = 7
-		progress = 0
+		progress = 5
 		enemies[1]["canspare"] = false
 	elseif GetAlMightyGlobal("papyrusdisbeliefex_checkpoint") == 4 then
 			progress = 0

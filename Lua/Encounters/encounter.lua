@@ -2156,7 +2156,7 @@ function EncounterStarting()
 	papy.y = PapsRig.Legs.y
 	papy.alpha = 0
 	
-	SetAlMightyGlobal("papyrusdisbeliefex_checkpoint",3)
+	
 	if GetAlMightyGlobal("papyrusdisbeliefex_checkpoint") == 1 then
 		Audio.LoadFile("p5_loop")
 		phase = 5
@@ -2224,7 +2224,7 @@ function EncounterStarting()
 		PapsRig:SendToBottom()
 		Bleed()
 		phase = 7
-		progress = 5
+		progress = 0
 		enemies[1]["canspare"] = false
 	elseif GetAlMightyGlobal("papyrusdisbeliefex_checkpoint") == 4 then
 			progress = 0

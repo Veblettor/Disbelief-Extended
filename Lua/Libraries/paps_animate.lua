@@ -256,7 +256,12 @@ elseif self.Animation == "Phase 8 Tired" then
   
   self.Arms.Left.y = -12
   self.Arms.Left.x = 3
-
+ elseif self.Animation == "      " then
+   self:SetAlpha(0)
+   self.Torso.alpha = 1
+   self.Torso.SetAnimation({"Papyrus/Body/      _"})
+   self.Torso.Scale(0.25,0.25)
+   self.Torso.y = -100
 end
 
 end
@@ -540,7 +545,13 @@ elseif self.Animation == "Phase 8 Tired" then
   self.RotatingLeft = true
   end
   
-
+elseif self.Animation == "      " then
+  self.Jaw.alpha = 0
+  self.Head.alpha = 0
+  self.Legs.alpha = 0
+  self.Arms.Left.alpha = 0
+  self.Arms.Right.alpha = 0
+  self.Torso.alpha = 1
 end -- end of animations
 
 end

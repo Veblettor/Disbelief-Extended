@@ -28,6 +28,10 @@ function bubble(a,b)
 SetBubbleOffset(a,  b)
 end
 
+function CoolFunction()
+	Encounter.Call("CoolFunction")
+end
+
 function slice(a,b)
 SetSliceAnimOffset(a,b)
 end
@@ -42,7 +46,7 @@ Encounter.Call("BeginPhase5")
 end
 
 function beginSpare()
-Encounter["spared"] = true
+Encounter.Call("PlayCutscene","spared")
 end
 
 function dustPaps()
@@ -209,7 +213,7 @@ end
 		end
 
 	end
-	
+
  end
 
 -- This handles the commands; all-caps versions of the commands list you have above.

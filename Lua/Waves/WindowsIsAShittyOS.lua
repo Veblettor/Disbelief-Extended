@@ -12,7 +12,7 @@ function explode(x,y)
 local ang = 22.5
 Audio.PlaySound("pierce")
 for i = 1,16 do
-	local lol = CreateProjectile("Papyrus/Body/      _",x,y)
+	local lol = CreateProjectile("Papyrus/Body/WindowsIsAShittyOS",x,y)
 	local rads = math.rad(ang)*i
 	lol.sprite.rotation = ang*i
 	lol.ppcollision = true
@@ -35,7 +35,7 @@ function implode(x,y)
 local ang = 22.5
 Audio.PlaySound("pierce")
 for i = 1,16 do
-	local lol = CreateProjectile("Papyrus/Body/      _",x,y)
+	local lol = CreateProjectile("Papyrus/Body/WindowsIsAShittyOS",x,y)
 	local rads = math.rad(ang)*i
 	lol.sprite.rotation = ang*i
 	lol.ppcollision = true

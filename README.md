@@ -14,4 +14,4 @@ Nelchael Recabarren for the [Phase 5](https://www.youtube.com/watch?v=5cXqcO3FHf
 [Joandr861 for the Phase 8 theme.](https://soundcloud.com/joandr861/interchangedtale-au-but-we-wont-let-that-happen-again-disappointment)
 
 # License
-This project's source code is under the GNU General Public License 3.0.
+This project's source code is under the MIT License.
